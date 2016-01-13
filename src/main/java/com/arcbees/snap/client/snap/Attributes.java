@@ -25,4 +25,115 @@ public interface Attributes {
 
     @JsProperty
     void setTransform(String transform);
+
+    @JsProperty
+    void setFill(Object fill);
+
+    @JsProperty
+    void setFillOpacity(Object fillOpacity);
+
+    @JsProperty
+    void setFillRule(Object fillRule);
+
+    @JsProperty
+    void setFilter(Object filter);
+
+    @JsProperty
+    void setFloodColor(Object floodColor);
+
+    @JsProperty
+    void setFloodOpacity(Object floodOpacity);
+
+    @JsProperty
+    void setFontFamily(Object fontFamily);
+
+    @JsProperty
+    void setFontSize(Object fontSize);
+
+    @JsProperty
+    void setFontSizeAjust(Object fontSizeAjust);
+
+    @JsProperty
+    void setFontStretch(Object fontStretch);
+
+    @JsProperty
+    void setFontStyle(Object fontStyle);
+
+    @JsProperty
+    void setFontVariant(Object fontVariant);
+
+    @JsProperty
+    void setFontWeight(Object fontWeight);
+
+    @JsProperty
+    void setMask(Object mask);
+
+    @JsProperty
+    void setOpacity(Object opacity);
+
+    @JsProperty
+    void setOverflow(Object overflow);
+
+    @JsProperty
+    void setPointerEvent(Object pointerEvent);
+
+    @JsProperty
+    void setStopColor(Object stopColor);
+
+    @JsProperty
+    void setStopOpacity(Object stopOpacity);
+
+    @JsProperty
+    void setStroke(Object stroke);
+
+    @JsProperty
+    void setStrokeDasharray(Object strokeDasharray);
+
+    @JsProperty
+    void setStrokeDashoffset(Object strokeDashoffset);
+
+    @JsProperty
+    void setStrokeLinecap(Object strokeLinecap);
+
+    @JsProperty
+    void setStrokeLinejoin(Object strokeLinejoin);
+
+    @JsProperty
+    void setStrokeMiterlimit(Object strokeMiterlimit);
+
+    @JsProperty
+    void setStrokeOpacity(Object strokeOpacity);
+
+    @JsProperty
+    void setStrokeWidth(Object strokeWidth);
+
+    @JsProperty
+    void setTextAnchor(Object textAnchor);
+
+    @JsProperty
+    void setTextDecoration(Object textDecoration);
+
+    @JsProperty
+    void setTextRendering(Object textRendering);
+
+    @JsProperty
+    void setVisibility(Object visibility);
+
+    @JsProperty
+    void setWordSpacing(Object wordSpacing);
+
+    @JsProperty
+    void setWritingMode(Object writingMode);
+
+    @JsProperty
+    void setColor(Object color);
+
+    @JsProperty
+    void setCursor(Object cursor);
+
+    @JsProperty
+    void setDirection(Object direction);
+
+    @JsProperty
+    void setDisplay(Object display);
 }

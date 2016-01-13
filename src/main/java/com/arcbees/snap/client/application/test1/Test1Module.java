@@ -11,15 +11,14 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package com.arcbees.snap.client.snap;
+package com.arcbees.snap.client.application.test1;
 
-import com.google.gwt.core.client.js.JsType;
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-@JsType(prototype = "Element")
-public interface Element {
-    <T> Element animate(Attributes attrs, float duration, Mina easing, Callback<Object> callback);
-
-    Element remove();
-
-    Element attr(Attributes attributes);
+public class Test1Module extends AbstractPresenterModule {
+    @Override
+    protected void configure() {
+        bindPresenter(Test1Presenter.class, Test1Presenter.MyView.class, Test1View.class,
+                Test1Presenter.MyProxy.class);
+    }
 }

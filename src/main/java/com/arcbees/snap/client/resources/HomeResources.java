@@ -11,15 +11,17 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package com.arcbees.snap.client.snap;
+package com.arcbees.snap.client.resources;
 
-import com.google.gwt.core.client.js.JsType;
+import com.google.gwt.resources.client.ClientBundle;
+import com.google.gwt.resources.client.CssResource;
 
-@JsType(prototype = "Element")
-public interface Element {
-    <T> Element animate(Attributes attrs, float duration, Mina easing, Callback<Object> callback);
+public interface HomeResources extends ClientBundle {
 
-    Element remove();
+    interface Style extends CssResource {
+        String svg();
+    }
 
-    Element attr(Attributes attributes);
+    @Source("css/home.gss")
+    Style style();
 }

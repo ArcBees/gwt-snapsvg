@@ -17,8 +17,12 @@ import javax.inject.Inject;
 
 public class ResourceLoader {
     @Inject
-    ResourceLoader(AppResources appResources) {
+    ResourceLoader(AppResources appResources,
+            HomeResources homeResources,
+            Test1Resources test1Resources) {
         appResources.normalize().ensureInjected();
         appResources.style().ensureInjected();
+        homeResources.style().ensureInjected();
+        test1Resources.style().ensureInjected();
     }
 }

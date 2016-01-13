@@ -14,12 +14,14 @@
 package com.arcbees.snap.client.application;
 
 import com.arcbees.snap.client.application.home.HomeModule;
+import com.arcbees.snap.client.application.test1.Test1Module;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new HomeModule());
+        install(new Test1Module());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
                 ApplicationPresenter.MyProxy.class);

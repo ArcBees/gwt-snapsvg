@@ -27,7 +27,25 @@ public interface Snap {
         return jsni("Snap", element);
     }
 
+    Element select(String selector);
+
+    Element angle(int x1, int y1, int x2, int y2, int x3, int y3);
+
     Element circle(int x, int y, float radius);
 
+    Element ellipse(int x, int y, int rx, int ry);
+
     Element rect(int x, int y, int width, int height, int rx, int ry);
+
+    Element path(String pathString);
+
+    Element gradient(String gradient);
+
+    Element line(int x1, int y1, int x2, int y2);
+
+    Element polyline(int... coords);
+
+    Element text(int x, int y, String text);
+
+    Element drag(int x, int y, String text);
 }
