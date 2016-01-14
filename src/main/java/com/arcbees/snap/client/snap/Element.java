@@ -31,7 +31,7 @@ public interface Element {
 
     BBox getBBox();
 
-    Element transform(String tstr); // à voir
+    Transform transform(String tstr); // TODO à voir
 
     Element parent();
 

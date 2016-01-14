@@ -65,8 +65,6 @@ public interface Snap {
 
     Mina animate(int [] from, int [] to, Function setter, float duration, Mina easing, Callback<Object> callback);
 
-//    Fragment parse(String svg);
-
     Element el(String name, Object attr);
 
     Element ajax(String url, String postData, Callback<Object> callback, Object scope); // TODO à voir
