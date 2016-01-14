@@ -21,6 +21,15 @@ import static com.arcbees.snap.client.snap.JsniUtils.getObject;
 @JsType
 public interface Mina {
     @JsProperty
+    Mina getTime();
+
+    @JsProperty
+    Mina getById();
+
+    @JsProperty
+    Mina getLinear();
+
+    @JsProperty
     Mina getBackin();
 
     @JsProperty
@@ -41,13 +50,16 @@ public interface Mina {
     @JsProperty
     Mina getElastic();
 
-    public static Mina backin = get().getBackin();
-    public static Mina backout = get().getBackout();
-    public static Mina bounce = get().getBounce();
+    public static Mina time = get().getTime();
+    public static Mina getById = get().getById();
+    public static Mina linear = get().getLinear();
+    public static Mina easeout = get().getEaseout();
     public static Mina easein = get().getEasein();
     public static Mina easeinout = get().getEaseinout();
-    public static Mina easeout = get().getEaseout();
+    public static Mina backin = get().getBackin();
+    public static Mina backout = get().getBackout();
     public static Mina elastic = get().getElastic();
+    public static Mina bounce = get().getBounce();
 
     public static Mina get() {
         return getObject("mina");
