@@ -3,7 +3,7 @@ package com.arcbees.snap.client.snap;
 import jsinterop.annotations.JsType;
 
 @JsType(name = "Object", isNative = true)
-public class Transform2 {
+public class Transform {
     public String string;
     public Matrix globalMatrix;
     public Matrix localMatrix;

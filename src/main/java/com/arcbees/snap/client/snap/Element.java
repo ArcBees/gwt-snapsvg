@@ -36,7 +36,7 @@ public interface Element {
 
     Element transform(String tstr);
 
-    Transform2 transform();
+    Transform transform();
 
     Element parent();
 
