@@ -607,36 +607,6 @@ public interface Attributes {
     void setXChannelSelector(Object xChannelSelector);
 
     @JsProperty
-    void setXlinkActuate(Object xlinkActuate);
-
-    @JsProperty
-    void setXlinkArcrole(Object xlinkArcrole);
-
-    @JsProperty
-    void setXlinkHref(Object xlinkHref);
-
-    @JsProperty
-    void setXlinkRole(Object xlinkRole);
-
-    @JsProperty
-    void setXlinkShow(Object xlinkShow);
-
-    @JsProperty
-    void setXlinkTitle(Object xlinkTitle);
-
-    @JsProperty
-    void setXlinkType(Object xlinkType);
-
-    @JsProperty
-    void setXmlBase(Object xmlBase);
-
-    @JsProperty
-    void setXmlLang(Object xmlLang);
-
-    @JsProperty
-    void setXmlSpace(Object xmlSpace);
-
-    @JsProperty
     void setY(Object y);
 
     @JsProperty

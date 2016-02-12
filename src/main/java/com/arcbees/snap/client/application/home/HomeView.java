@@ -653,20 +653,21 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
 
         Matrix myMatrix = new Matrix();
         myMatrix.scale(4, 2, 0, 0);
-        myMatrix.translate(100, 0);
-        myMatrix.rotate(45,75,75);
 
         Matrix myInvertMatrix = myMatrix.invert();
 
         Attributes group1Anim = Attributes.create();
         group1Anim.setTransform(myMatrix);
-        group1.animate(myMatrix, 3000, Mina.bounce, new Callback<Object>() {
+
+
+        group1.animate(group1Anim, 3000, Mina.bounce, new Callback<Object>() {
             @Override
             public void onCallback(Object object) {
-                group1.animate(myInvertMatrix, 3000, Mina.bounce, new Callback<Object>() {
+                Attributes group1AnimInvert = Attributes.create();
+                group1AnimInvert.setTransform(myInvertMatrix);
+                group1.animate(group1AnimInvert, 3000, Mina.bounce, new Callback<Object>() {
                     @Override
                     public void onCallback(Object object) {
-
                     }
                 });
             }
