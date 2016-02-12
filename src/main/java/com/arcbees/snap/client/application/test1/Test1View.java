@@ -43,7 +43,7 @@ public class Test1View extends ViewImpl implements Test1Presenter.MyView {
 
     @Override
     protected void onAttach() {
-        Snap snap = Snap.create(svg);
+        Snap snap = new Snap(svg);
 
         Element rect = snap.rect(10, 10, 10, 10, 0, 0);
         Attributes attrs = Attributes.create();
@@ -54,7 +54,7 @@ public class Test1View extends ViewImpl implements Test1Presenter.MyView {
 //            onAttach();
         });
 
-        Element circle = Snap.create(svg).circle(100,100,150);
+       /* Element circle = Snap.create(svg).circle(100,100,150);
         attrs = Attributes.create();
         attrs.setTransform("t100,100");
 
@@ -68,7 +68,7 @@ public class Test1View extends ViewImpl implements Test1Presenter.MyView {
         ellipse.animate(attrs, 1500, Mina.easeinout, (e) -> {
                         circle.remove();
             //            onAttach();
-        });
+        });*/
 
 //        wrapElement(hair).animate(attrs, 1500, Mina.easeinout, (e) -> {
 //        });

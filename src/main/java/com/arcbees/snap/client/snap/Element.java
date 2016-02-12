@@ -6,23 +6,26 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * Unless required by applicable law oxr agreed to in writing, software distributed under the License is distributed on
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
 
 package com.arcbees.snap.client.snap;
 
-import com.google.gwt.core.client.js.JsType;
-
+import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
+import jsinterop.annotations.JsType;
 
-@JsType(prototype = "Element")
+@JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "Element")
 public interface Element {
     <T> Element animation(Attributes attrs, float duration, Mina easing, Callback<Object> callback);
 
     @JsProperty
     Element getNode();
+
+    @JsProperty
+    Element getTextPath();
 
     @JsProperty
     Element getType();
@@ -31,7 +34,9 @@ public interface Element {
 
     BBox getBBox();
 
-    Transform transform(String tstr); // TODO à voir
+    Element transform(String tstr);
+
+    Transform2 transform();
 
     Element parent();
 
@@ -65,11 +70,11 @@ public interface Element {
 
     Element toDefs();
 
-    Element toPattern(String x, String y, String width, String height);
+    Element toPattern(int x, int y, int width, int height);
 
     Element marker(int x, int y, int width, int height, int refX, int refY);
 
-    Element inAnim(); // TODO à voir
+    Element inAnim();
 
     Element stop();
 
@@ -139,14 +144,10 @@ public interface Element {
 
     Element unhover(Function f_in, Function f_out);
 
-    Drag drag(Function onmove, Function onstart, Function onend, Object mcontext, Object scontext, Object econtext); // TODO à voir
+    Element drag(MoveFunction onmove, DragStartFunction onstart, DragEndFunction onend, Object mcontext,
+                 Object scontext, Object econtext);
+
+    Element drag();
 
     Element undrag();
-
-    int getTotalLength(); // TODO à voir
-
-    Object getPointAtLength(int length); // TODO à voir
-
-    String getSubpath(int from, int to); // TODO à voir
-
 }

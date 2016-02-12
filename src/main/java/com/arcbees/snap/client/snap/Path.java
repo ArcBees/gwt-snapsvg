@@ -13,35 +13,38 @@
 
 package com.arcbees.snap.client.snap;
 
-import com.google.gwt.core.client.js.JsType;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
-@JsType(prototype = "Element")
+@JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "Element")
 public interface Path {
-    String getTotalLength(String path);
+    double getTotalLength(String path);
 
-    Path getPointAtLength(String path, int length); // TODO à voir
+    Coordinate getPointAtLength(String path, int length);
 
-    Path getSubpath(String path, int from, int to);
+    String getSubpath(String path, int from, int to);
 
-    Path findDotsAtSegment(int p1x, int p1y, int c1x, int c1y, int c2x, int c2y, int p2x, int p2y, int t); // TODO à voir
+    PointInformation findDotsAtSegment(int p1x, int p1y, int c1x, int c1y, int c2x, int c2y, int p2x, int p2y, int t);
 
-    Path bezierBBox(int p1x, int p1y, int c1x, int c1y, int c2x, int c2y, int p2x, int p2y); // TODO à voir
+    BoundingBox bezierBBox(int p1x, int p1y, int c1x, int c1y, int c2x, int c2y, int p2x, int p2y);
 
-    boolean isPointInsideBBox(String bbox, String x, String y); // TODO à voir
+    boolean isPointInsideBBox(String bbox, String x, String y);
 
-    boolean isBBoxIntersect(String bbox1, String bbox2); // TODO à voir
+    boolean isBBoxIntersect(String bbox1, String bbox2);
 
-    Path intersection(String path1, String path2); // TODO à voir
+    Intersection[] intersection(String path1, String path2);
+
+    Intersection[] intersection(Element path1, Element path2);
 
     boolean isPointInside(String path, int x, int y);
 
-    Path getBBox(String path); // TODO à voir
+    BoundingBox getBBox(String path);
 
-    Path toRelative(String path); // TODO à voir
+    String[] toRelative(String path);
 
-    Path toAbsolute(String path); // TODO à voir
+    String[] toAbsolute(String path);
 
-    Path toCubic(String [] pathString); // TODO à voir
+    String[] toCubic(String path);
 
-    String map(String path, Matrix matrix); // TODO à voir
+    String map(String path, Matrix matrix);
 }

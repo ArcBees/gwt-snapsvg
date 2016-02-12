@@ -13,9 +13,11 @@
 
 package com.arcbees.snap.client.snap;
 
-import com.google.gwt.core.client.js.JsType;
 
-@JsType(prototype = "Element")
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
+
+@JsType(name = "Element", isNative = true, namespace = JsPackage.GLOBAL)
 public interface Set {
     <T> Set animate(Attributes attrs, float duration, Mina easing, Callback<Object> callback);
 
@@ -25,11 +27,15 @@ public interface Set {
 
     Set forEach(Callback<Object> callback, Object thisArg);
 
-    Set bind(String attr, Callback<Object> callback); // TODO à voir
+    Set bind(String attr, Callback<Object> callback);
+
+    Set bind(String attr, Element element, String eattr);
+
+    Set bind(String attr, Element element);
 
     Set clear();
 
-    Set splice(int index, int count, Object insertion); // TODO à voir
+    Set splice(int index, int count, Object... insertion);
 
-    boolean exclude(Object element); // TODO à voir
+    boolean exclude(Object element);
 }

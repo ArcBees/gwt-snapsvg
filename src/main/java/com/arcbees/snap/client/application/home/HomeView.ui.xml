@@ -1,16 +1,58 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
         xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
+    <ui:with field="res" type="com.arcbees.snap.client.resources.AppResources"/>
     <ui:with field="home" type="com.arcbees.snap.client.resources.HomeResources"/>
 
     <g:HTMLPanel>
 
         <p>world!</p>
 
-        <svg ui:field="svg" class="{home.style.svg}">
+        <svg ui:field="svg" class="{home.style.svg}"></svg>
 
+        <svg ui:field="svgColor" class="{home.style.svg}"></svg>
 
-        </svg>
+        <svg ui:field="svgDisplayImg" class="{home.style.svg}"></svg>
+
+        <svg ui:field="svgDisplayTitle" class="{home.style.svg}"></svg>
+
+        <svg ui:field="dasharray" class="{home.style.svg}"/>
+
+        <svg ui:field="transform" class="{home.style.svg}"/>
+
+        <!--<svg ui:field="relativeTransform" class="{home.style.svg}"/>-->
+
+        <svg ui:field="filterBlur" class="{home.style.svg}"/>
+
+        <svg ui:field="drag" class="{home.style.svg}"/>
+
+        <svg ui:field="mask" class="{home.style.svg}"/>
+
+        <svg ui:field="animMaskClipPath" class="{home.style.svg}"/>
+
+        <svg ui:field="snapAnotherMask" class="{home.style.svg}"/>
+
+        <svg ui:field="loadingSvg" class="{home.style.svg}"/>
+
+        <svg ui:field="loadingSvgAndAnimate" class="{home.style.svg}"/>
+
+        <svg ui:field="pathCircleIntersection" class="{home.style.svg}"/>
+
+        <svg ui:field="animateRotateGroup" class="{home.style.svg}"/>
+
+        <svg ui:field="transformGroupGroup" class="{home.style.svg}"/>
+
+        <!--<svg ui:field="translatingGroup" class="{home.style.svg}"/>-->
+
+        <svg ui:field="animTextPath" class="{home.style.svg}"/>
+
+        <svg ui:field="matrix" class="{home.style.svg}"/>
+
+        <svg ui:field="selectAll" class="{home.style.svg}"/>
+
+        <svg ui:field="gettingStarted" class="{home.style.svg}"/>
+
+        <svg ui:field="test2Html" class="{home.style.svg}"/>
 
     </g:HTMLPanel>
 </ui:UiBinder>

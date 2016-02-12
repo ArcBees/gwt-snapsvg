@@ -13,7 +13,7 @@
 
 package com.arcbees.snap.client.snap;
 
-import com.google.gwt.core.client.js.JsFunction;
+import jsinterop.annotations.JsFunction;
 
 @JsFunction
 @FunctionalInterface

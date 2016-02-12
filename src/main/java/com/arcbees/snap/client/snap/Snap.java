@@ -13,103 +13,119 @@
 
 package com.arcbees.snap.client.snap;
 
-import com.google.gwt.core.client.js.JsType;
+import elemental.svg.SVGMatrix;
+import elemental.xml.XMLHttpRequest;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
-import static com.google.gwt.query.client.js.JsUtils.jsni;
+@JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "Snap")
+public class Snap {
+    public static native Mina animate(int from, int to, Callback<Object> setter, float duration, Mina easing, Function
+            callback);
 
-@JsType
-public interface Snap {
-    static Snap create(String selector) {
-        return jsni("Snap", selector);
+    public native Matrix matrix(int a, int b, int c, int d, int e, int f);
+
+    public native Matrix matrix(SVGMatrix svgMatrix);
+
+    public static native Element load(String url, Callback<Element> callback);
+
+    public static native Fragment parse(String svg);
+
+    public static native Element plugin(Function function);
+
+    public static Path path;
+
+    public Snap(String selector) {
     }
 
-    static Snap create(com.google.gwt.dom.client.Element element) {
-        return jsni("Snap", element);
+    public Snap(com.google.gwt.dom.client.Element element) {
     }
 
-    String format(String token, Object json);
+    public static Filter filter;
 
-    Element rad(float deg);
+    public native String format(String token, Object json);
 
-    Element deg(float rad);
+    public native Element rad(float deg);
 
-    double angle(int x1, int y1, int x2, int y2, int x3, int y3);
+    public native Element deg(float rad);
 
-    boolean is(Object object, String type);
+    public native double angle(int x1, int y1, int x2, int y2, int x3, int y3);
 
-    int snapTo(int[] values, int value, int tolerance);
+    public native boolean is(Object object, String type);
 
-    RgbColor getRGB(String color); // TODO warning
+    public native int snapTo(int[] values, int value, int tolerance);
 
-    String hsb(int h, int s, int b);
+    public native RgbColor getRGB(String color); // TODO warning
 
-    String hsl(int h, int s, int l);
+    public native String hsb(int h, int s, int b);
 
-    String rgb(int r, int g, int b);
+    public native String hsl(int h, int s, int l);
 
-    Color color(String clr); // TODO warning
+    public native String rgb(int r, int g, int b);
 
-    Color hsb2rgb(int h, int s, int l); // TODO warning
+    public native Color color(String clr); // TODO warning
 
-    Color rgb2hsb(int r, int g, int b); // TODO warning
+    public native Color hsb2rgb(int h, int s, int l); // TODO warning
 
-    Color rgb2hsl(int r, int g, int b); // TODO warning
+    public native Color rgb2hsb(int r, int g, int b); // TODO warning
 
-    Element parsePathString(String [] pathString);
+    public native Color rgb2hsl(int r, int g, int b); // TODO warning
 
-    Element parseTransformString(String [] TString);
+    public native Element parsePathString(String[] pathString);
 
-    Element select(String selector);
+    public native Element parseTransformString(String[] TString);
 
-    Element selectAll(String selector);
+    public native Element select(String selector);
 
-    Mina animate(int [] from, int [] to, Function setter, float duration, Mina easing, Callback<Object> callback);
+    public native Element selectAll(String selector);
 
-    Element el(String name, Object attr);
+    public native Element el(String name, Object attr);
 
-    Element ajax(String url, String postData, Callback<Object> callback, Object scope); // TODO à voir
+    public native XMLHttpRequest ajax(String url, String postData, Callback<Object> callback, Object scope);
 
-    Element load(String url, Callback<Object> callback, Object scope); // TODO à voir
+    public native XMLHttpRequest ajax(String url, Callback<Object> callback, Object scope);
 
-    Object getElementByPoint (int x, int y);
+    public native Object getElementByPoint(int x, int y);
 
-    Object plugin (Function function);
+    public native Element rect(int x, int y, int width, int height, int rx, int ry);
 
-    Element matrix(int a, int b, int c, int d, int e, int f); // TODO à voir pour le "or"
+    public native Element circle(int x, int y, float radius);
 
-    Element rect(int x, int y, int width, int height, int rx, int ry);
+    public native Element image(String src, int x, int y, int width, int height);
 
-    Element circle(int x, int y, float radius);
+    public native Element ellipse(int x, int y, int rx, int ry);
 
-    Element image(String src, int x, int y, int width, int height);
+    public native Element path(String pathString);
 
-    Element ellipse(int x, int y, int rx, int ry);
+    public native Element g(Element... elements);
 
-    Element path(String pathString);
+    public native Element svg(int x, int y, int width, int height, int vbx, int vby, int vbw, int vbh);
 
-    Element g(Element... elements);
+    public native Element mask(Element... elements);
 
-    Element svg(int x, int y, int width, int height, int vbx, int vby, int vbw, int vbh);
+    public native Element ptrn(int x, int y, int width, int height, int vbx, int vby, int vbw, int vbh);
 
-    Element mask(Element... elements);
+    public native Element use(String id);
 
-    Element ptrn(int x, int y, int width, int height, int vbx, int vby, int vbw, int vbh);
+    public native Element use(Element element);
 
-    Element use(String id); // TODO à voir pour le id ui:fields??
+    public native Element text(int x, int y, String text);
 
-    Element text(int x, int y, String text);
+    public native Element line(int x1, int y1, int x2, int y2);
 
-    Element line(int x1, int y1, int x2, int y2);
+    public native Element polyline(int... coords);
 
-    Element polyline(int... coords);
+    public native Element gradient(String gradient);
 
-    Element gradient(String gradient);
+    public native String toString();
 
-    String toString();
+    public native String clear();
 
-    String clear();
+    public native Element filter(String filstr);
 
-    Element filter(String filstr);
+    public native Element filterBlur(int x, int y);
 
-    Element filterBlur(int x, int y);
+    public native Element append(Element... elements);
+
+    public native Element hover(Element... elements);
 }

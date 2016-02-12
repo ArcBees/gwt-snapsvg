@@ -5,6 +5,7 @@
     <inherits name='com.google.gwt.user.User'/>
     <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
     <inherits name="com.google.gwt.query.Query"/>
+    <inherits name="elemental.Elemental"/>
 
     <extend-configuration-property name="gin.ginjector.modules"
                                    value="com.arcbees.snap.client.gin.ClientModule"/>

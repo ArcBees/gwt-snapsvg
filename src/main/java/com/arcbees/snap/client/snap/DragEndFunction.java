@@ -11,16 +11,12 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package com.arcbees.snap.client.resources;
+package com.arcbees.snap.client.snap;
 
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.CssResource;
+import jsinterop.annotations.JsFunction;
 
-public interface HomeResources extends ClientBundle {
-    interface Style extends CssResource {
-        String svg();
-    }
-
-    @Source("css/home.gss")
-    Style style();
+@JsFunction
+@FunctionalInterface
+public interface DragEndFunction {
+    void onCallback(Object event);
 }

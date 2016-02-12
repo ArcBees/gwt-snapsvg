@@ -2,27 +2,27 @@ package com.arcbees.snap.client.snap;
 
 import jsinterop.annotations.JsType;
 
-@JsType(name = "Object", isNative = true)
-public interface Matrix {
-    Matrix add(int a, int b, int c, int d, int e, int f);
+@JsType(name = "Matrix", isNative = true, namespace = "Snap")
+public class Matrix {
+    public native Matrix add(int a, int b, int c, int d, int e, int f);
 
-    Matrix invert();
+    public native Matrix invert();
 
-    Matrix clone();
+    public native Matrix clone();
 
-    Matrix translate(int x, int y);
+    public native Matrix translate(int x, int y);
 
-    Matrix scale(int x, int y, int cx, int cy);
+    public native Matrix scale(int x, int y, int cx, int cy);
 
-    Matrix rotate(int a, int x, int y);
+    public native Matrix rotate(int a, int x, int y);
 
-    int x(int x, int y);
+    public native int x(int x, int y);
 
-    int y(int x, int y);
+    public native int y(int x, int y);
 
-    int determinant();
+    public native int determinant();
 
-    Matrix split(); // TODO à voir
+    public native SplittedMatrix split();
 
-    String toTransformString();
+    public native String toTransformString();
 }

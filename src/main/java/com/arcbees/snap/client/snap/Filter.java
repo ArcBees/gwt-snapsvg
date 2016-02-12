@@ -1,24 +1,25 @@
 package com.arcbees.snap.client.snap;
 
+import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
-@JsType(name = "Object", isNative = true)
-public interface Filter {
-    Filter blur(int x, int y);
+@JsType(namespace = JsPackage.GLOBAL, name = "Object", isNative = true)
+public class Filter {
+    public native String blur(int x, int y);
 
-    Filter shadow(int dx, int dy, int blur, String color, int opacity);
+    public native String shadow(int dx, int dy, int blur, String color, int opacity);
 
-    Filter grayscale(int amount);
+    public native String grayscale(int amount);
 
-    Filter sepia(int amount);
+    public native String sepia(int amount);
 
-    Filter saturate(int amount);
+    public native String saturate(int amount);
 
-    Filter hueRotate(int amount);
+    public native String hueRotate(int amount);
 
-    Filter invert(int amount);
+    public native String invert(int amount);
 
-    Filter brightness(int amount);
+    public native String brightness(int amount);
 
-    Filter contrast(int amount);
+    public native String contrast(int amount);
 }
